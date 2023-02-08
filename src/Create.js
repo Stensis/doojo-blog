@@ -41,7 +41,7 @@ function Create() {
 
 
       <div>
-        <h3 className="text-align-center">Create A New Blog</h3>
+        <h3 className=" m-3 ">Create A New Blog Here ...</h3>
       </div>
       <div id="wrapper">
         <form id="paper" method="get" action="" onSubmit={handleSubmit}>
@@ -75,7 +75,8 @@ function Create() {
               overflow: " hidden",
               wordWrap: " break-word",
               resize: "none",
-              height: "160px"
+              height: "195px",
+              width: "28em"
             }}
             required
             value={body}
