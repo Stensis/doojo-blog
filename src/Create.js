@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 function Create() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
+  const [isloading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   // handle submit function
   const handleSubmit = (e) => {
@@ -13,7 +16,19 @@ function Create() {
     // blog object
     const blog = { title, body, author };
 
-    console.log(blog);
+    setIsLoading(true);
+
+    // adding a new blog to the db/json
+    fetch("http://localhost:3001/blogs", {
+      method: "POST",
+      headers: { "content-Type": "application/json" },
+      body: JSON.stringify(blog)
+    }).then(() => {
+      console.log("new blog added succesfully");
+      setIsLoading(false);
+      navigate('/');
+
+    });
   };
 
   return (
@@ -51,7 +66,12 @@ function Create() {
         </div>
 
         <div>
-          <button className="mt-2 rounded-1">Post Blog</button>
+          {!isloading && <button className="mt-2 rounded-1">Add Blog</button>}
+          {isloading && (
+            <button disabled className="mt-2 rounded-1">
+              adding blog ....
+            </button>
+          )}
         </div>
       </form>
       <div>
