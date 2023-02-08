@@ -9,14 +9,13 @@ function BlogList({ blogs }) {
       <h2 className="container text-center mt-3">All Blogs</h2>
       <div className="row">
         <div className="col text-center">
-          {" "}
           {/*mapping each blog  */}
           {blogs.map((blog) => (
             <div className="container text-center">
               <div className="row" key={blog.id}>
                 <div className="col-6">
                   <div className="card-body m-2">
-                    {/* linking to each individual blog */}
+                    {/* linking to each individual blog by id */}
                     <Link to={`/blogs/${blog.id}`}>
                       <h5 className="card-title">Title: {blog.title}</h5>
                       <p>Written by: {blog.author}</p>

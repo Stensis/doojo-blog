@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
-        <h2 className="mb-3">The  Doojo Blog</h2>
+        <h2 className="mb-3">The Doojo Blog</h2>
         <ul>
           <li>
             <Link to="/">Home</Link>
