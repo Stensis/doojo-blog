@@ -1,0 +1,13 @@
+.btn {
+    border: 5px solid;
+    margin-left: 200px;
+    margin-bottom: 10px;
+    
+    border-image-slice: 1;
+    background: var(--gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source:  var(--gradient) !important; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }

@@ -40,8 +40,8 @@ function BlogList({ blogs }) {
                   </p>
                   <button
                     class="btn mr-2 text-align-center w-25"
-                    
                     onClick={toggleExpanded}
+                    style={{ textDecoration: 'none' }}
                   >
                     {isExpanded ? "Show Less" : "Read More"}
                   </button>
