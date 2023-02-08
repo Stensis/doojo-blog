@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "../src/CSS/create.css";
 
 function Create() {
   const [title, setTitle] = useState("");
+  const [img, setImg] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [isloading, setIsLoading] = useState(false);
@@ -14,7 +16,7 @@ function Create() {
     e.preventDefault();
 
     // blog object
-    const blog = { title, body, author };
+    const blog = { title, body, author, img };
 
     setIsLoading(true);
 
@@ -26,72 +28,111 @@ function Create() {
     }).then(() => {
       console.log("new blog added succesfully");
       setIsLoading(false);
-      navigate('/');
-
+      navigate("/");
     });
   };
 
   return (
     <>
-      <h3>Create A New Blog</h3>
-      <form onSubmit={handleSubmit}>
-        {/* < onSubmit={handleSubmit}> */}
-        <div className="mb-3">
-          <label className="form-label">Blog Title:</label>
-          <input
-            type="text"
-            placeholder="Write title here"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Blog Author:</label>
-          <input
-            type="text"
-            placeholder="Blog author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-        </div>
+      <div>
+        <h3 className="text-align-center">Create A New Blog</h3>
+      </div>
+      <div id="wrapper">
+        <form id="paper" method="get" action="" onSubmit={handleSubmit}>
+          <div id="margin">
+            Title:{" "}
+            <input
+              id="title"
+              type="text"
+              name="title"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
 
-        <div className="mb-3">
-          <label htmlFor="Enter Title" className="form-label">
-            Blog Body:
-          </label>
+          <div id="margin">
+            Image Url:{" "}
+            <input
+              id="title"
+              type="text"
+              name="title"
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+            />
+          </div>
           <textarea
+            id="text"
+            name="text"
+            rows="4"
+            style={{
+              overflow: " hidden",
+              wordWrap: " break-word",
+              resize: "none",
+              height: "160px"
+            }}
+            required
             value={body}
             onChange={(e) => setBody(e.target.value)}
           ></textarea>
-        </div>
-
-        <div>
-          {!isloading && <button className="mt-2 rounded-1">Add Blog</button>}
-          {isloading && (
-            <button disabled className="mt-2 rounded-1">
-              adding blog ....
-            </button>
-          )}
-        </div>
-      </form>
-      <div>
-        {" "}
-        {/* outputing the blog body */}
-        <p>
-          Title:
-          <br /> {title}
-        </p>
-        <p>
-          Author:
-          <br /> {author}
-        </p>
-        <p>
-          Body: <br />
-          {body}
-        </p>
+          <div id="margin">
+            Author:{" "}
+            <input
+              id="title"
+              type="text"
+              name="title "
+              required
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
+          </div>
+          <br />
+          <div>
+            {!isloading && <input id="button" type="submit" value="Create" />}
+            {isloading && <input id="button" type="submit" value="Adding " />}
+          </div>
+        </form>
       </div>
     </>
   );
 }
 
 export default Create;
+
+// <form onSubmit={handleSubmit}>
+//   {/* < onSubmit={handleSubmit}> */}
+//   <div className="mb-3">
+//     <label className="form-label">Blog Title:</label>
+//     <input
+//       type="text"
+//       placeholder="Write title here"
+//       value={title}
+//       onChange={(e) => setTitle(e.target.value)}
+//     />
+//   </div>
+//   <div>
+//     <label>Blog Author:</label>
+//     <input
+//       type="text"
+//       placeholder="Blog author"
+//       value={author}
+//       onChange={(e) => setAuthor(e.target.value)}
+//     />
+//   </div>
+
+//   <div className="mb-3">
+//     <label htmlFor="Enter Title" className="form-label">
+//       Blog Body:
+//     </label>
+//     <textarea value={body} onChange={(e) => setBody(e.target.value)}></textarea>
+//   </div>
+
+//   <div>
+//     {!isloading && <button className="mt-2 rounded-1">Add Blog</button>}
+//     {isloading && (
+//       <button disabled className="mt-2 rounded-1">
+//         adding blog ....
+//       </button>
+//     )}
+//   </div>
+// </form>;

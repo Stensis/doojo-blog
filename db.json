@@ -1,10 +1,25 @@
 {
   "blogs": [
     {
-      "title": "JSON SERVER",
-      "author": "foo",
-      "body": "I am writing to express my interest in the Ruby on Rails Developer role at Loopers Insight. As a recent graduate with a passion for web development and a strong foundation in programming, I am excited about the opportunity to bring my skills and enthusiasm to your team.",
-      "id": 1
+      "title": "ewrdwefwef",
+      "img": "https://images.unsplash.com/photo-1674903745215-0267b9c6baeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      "body": "ewrestgp'[;guikyfjtyhtkjngfgdkjheuithe5tkerngdsf,mg,We have now completed our second functionality of our App. Let’s cover the last two together as they have the same working code with a few differences,We have now completed our second functionality of our App. Let’s cover the last two together as they have the same working code with a few differencesm",
+      "author": "ewrwefr",
+      "id": 5
+    },
+    {
+      "title": "hello",
+      "body": "hurrasgs",
+      "author": "kim",
+      "img": "https://images.unsplash.com/photo-1674897507017-f6c1527356de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      "id": 7
+    },
+    {
+      "title": "gyuuui",
+      "body": "tyutuuituityug",
+      "author": "hjhkkj",
+      "img": "https://images.unsplash.com/photo-1675636999409-b9cbdf84448f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      "id": 8
     }
   ]
 }
