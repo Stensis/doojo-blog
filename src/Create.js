@@ -7,6 +7,7 @@ function Create() {
   const [img, setImg] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
+  const [date, setDate] = useState(new Date());
   const [isloading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ function Create() {
     e.preventDefault();
 
     // blog object
-    const blog = { title, body, author, img };
+    const blog = { title, body, author, img ,date};
 
     setIsLoading(true);
 
@@ -34,6 +35,11 @@ function Create() {
 
   return (
     <>
+
+
+
+
+
       <div>
         <h3 className="text-align-center">Create A New Blog</h3>
       </div>
@@ -75,6 +81,19 @@ function Create() {
             value={body}
             onChange={(e) => setBody(e.target.value)}
           ></textarea>
+          
+          <div id="margin">
+          
+        
+            Date:{" "}
+            <input
+              id="title"
+              type="text"
+              name="title"
+              value={date.toDateString()}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
           <div id="margin">
             Author:{" "}
             <input

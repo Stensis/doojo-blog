@@ -8,7 +8,7 @@ function Home() {
     <div>
       {error && <div>{error}</div>}
       {isLoading && <div>Loading ...</div>}
-      {blogs && <BlogList blogs={blogs} />}
+      {blogs && <BlogList blogs={blogs} />}{" "}
     </div>
   );
 }

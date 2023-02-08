@@ -46,6 +46,10 @@ function BlogDetails() {
               {" "}
               Author: {blog.author}
             </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {" "}
+              Date Created: {blog.date}
+            </h6>
             <img
               src={blog.img}
               class="card-img-top"

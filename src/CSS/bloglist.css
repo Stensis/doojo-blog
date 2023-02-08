@@ -7,17 +7,20 @@
   }
   
   .card {
-  margin-left: 45px;
-   text-align: center ;
+  margin: 2px;
+  
+  /* text-align: center ; */
     background: #222;
     border: 1px solid #dd2476;
     border-width: 3px ;
     color: rgba(102, 38, 38, 0.8);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
   
   .btn {
     border: 5px solid;
+    margin-left: 200px;
+    margin-bottom: 10px;
     
     border-image-slice: 1;
     background: var(--gradient) !important;

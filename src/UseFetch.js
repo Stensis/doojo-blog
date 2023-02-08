@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function UseFetch(url) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,6 +14,8 @@ function UseFetch(url) {
         return res.json();
       })
       .then((data) => {
+        // setData(data.sort((a, b) => b.date - a.date));
+        // console.log(data)
         setData(data);
         setIsLoading(false);
         setError(null);

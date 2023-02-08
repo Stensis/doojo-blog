@@ -1,47 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../src/CSS/bloglist.css";
 
 function BlogList({ blogs }) {
   //   const blogs = props.blogs
+  // to display more content when a user clicks readmore
+  const [isExpanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setExpanded(!isExpanded);
+  };
 
   return (
     <>
-      {/* <div class="">
-  <div class="row">
-    <div class="col"></div> */}
       <div class="container text-center">
-        {/*mapping each blog  */}
-        {blogs.map((blog) => (
-          <div class="row justify-content-around">
-            <div class="col-" key={blog.id}>
+        <div class="row row row-cols-1 row-cols-md-2 g-4 justify-content-around">
+          {/*mapping each blog  */}
+          {blogs.map((blog) => (
+            <div class="col" key={blog.id}>
               {/* linking to each individual blog by id */}
               <Link to={`/blogs/${blog.id}`}>
-                <div class="card mt-4" >
-                <h3 class="card-title mt-2">{blog.title}</h3>
-                <h6 class="card-subtitle mb-2 text-muted">
-                      {" "}
-                      Author: {blog.author}
-                    </h6>
+                <div class="card mt-4">
+                  <h4 class="card-title mt-2">{blog.title}</h4>
+                  <h6 class="card-subtitle mb-2 text-decoration-none text-muted ">
+                    {" "}
+                    Author: {blog.author} <br /> Date: {blog.date}
+                  </h6>
                   <img
                     src={blog.img}
                     class="card-img-top"
                     alt="..."
-                    style={{ width: "auto", height: "30em" }}
+                    style={{ width: "auto", height: "20em" }}
                   />
-                  <div class="card-body">
-                   
-                   
-                    <p class="card-text">{blog.body}</p>
-                    <a href="/" class="btn mr-2">
-                      Read More
-                    </a>
-                  </div>
+
+                  <p>
+                    {!isExpanded
+                      ? blog.body.substring(0, 100) + "..."
+                      : blog.body}
+                  </p>
+                  <button
+                    class="btn mr-2 text-align-center w-25"
+                    
+                    onClick={toggleExpanded}
+                  >
+                    {isExpanded ? "Show Less" : "Read More"}
+                  </button>
                 </div>
               </Link>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
