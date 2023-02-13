@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const LikeButton = ({ blogId, likes }) => {
-  const [numLikes, setNumLikes] = useState(likes);
+function LikeButton({ id }) {
+  // Create a state variable to store the number of likes
+  const [likeCount, setLikeCount] = useState(0);
 
-  const handleLikeClick = () => {
-    setNumLikes(numLikes + 1);
-
-    fetch(`/api/blogs/${blogId}/likes`, {
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+  // Define an onClick event handler that updates the state variable and sends a request to the server
+  const handleLikeClick = async () => {
+    setLikeCount(likeCount + 1);
+    try {
+      const response = await fetch(`http://localhost:3000/blogs/likes`+ id, {
+        method: "POST",
+        body: JSON.stringify({ likeCount: likeCount + 1 }),
+        headers: { "Content-Type": "application/json" }
       });
+      if (!response.ok) {
+        throw new Error("Failed to update like count");
+      }
+    } catch (error) {
+      console.error(error);
+      // Roll back the state update if the request failed
+      setLikeCount(likeCount + 1);
+    }
   };
 
+  // Use the state variable to display the number of likes in the UI
   return (
     <div>
-      <p>Likes: {numLikes}</p>
-      <button onClick={handleLikeClick}>Like</button>
+      <button onClick={handleLikeClick}>❤️</button>
+      <p>{likeCount} likes</p>
     </div>
   );
-};
-
+}
 export default LikeButton;

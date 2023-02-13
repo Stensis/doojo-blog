@@ -11,13 +11,13 @@ function BlogDetails() {
     data: blog,
     error,
     isLoading
-  } = UseFetch("http://localhost:3001/blogs/" + id);
+  } = UseFetch("http://localhost:3000/blogs/" + id);
   // going back to the home page
   // const navigate = useNavigate;
 
   // handle delete function TO DELETE  a blog by id
   const handleClick = () => {
-    fetch("http://localhost:3001/blogs/" + id, {
+    fetch("http://localhost:3000/blogs/" + id, {
       method: "DELETE"
     }).then(() => {
       // navigate("/", { replace: true });
@@ -58,12 +58,36 @@ function BlogDetails() {
             />
             <div class="card-body">
               <p class="card-text">{blog.body}</p>
-              <Link to={"/"} className="m-4">
-                <button class="btn mr-2">Go Back</button>
-              </Link>
-              <button class="btn mr-2" onClick={handleClick}>
-                Delete
-              </button>
+            </div>
+
+            <div class="container text-center mt-2">
+              <div class="row justify-content-evenly">
+                <div class="col-3">
+                
+                  <Link to={"/"} className="">
+                    <button class="but">Previous page</button>
+                  </Link>
+                </div>
+                <div class="col-5">
+                  <div class="row justify-content-evenly">
+                    <div class="col">
+                      <button class="but" style={{ textDecoration: "none" }}>
+                        Comments
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="but" style={{ textDecoration: "none" }}>
+                        ❤️
+                      </button>{" "}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <button class="but" onClick={handleClick}>
+                    Delete blog
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}

@@ -32,10 +32,34 @@
   }
   
   .btn:hover, .btn:focus {
-        background: var(--gradient) !important;
+    background: var(--gradient) !important;
     -webkit-background-clip: none !important;
     -webkit-text-fill-color: #fff !important;
     border: 5px solid #fff !important; 
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
   }
+
+  .but {
+    border: 2px solid;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    
+    border-image-slice: 1;
+    background: var(--gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source:  var(--gradient) !important; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }
+  
+  .but:hover, .but:focus {
+    text-decoration: none;
+    /* background: var(--gradient) !important; */
+    -webkit-background-clip: none !important;
+    -webkit-text-fill-color:#ffffff00 !important;
+    border: 2px solid #0d030f !important; 
+    box-shadow: #e7cccc 2px 0 15px;
+    text-decoration: underline;
+    }

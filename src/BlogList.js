@@ -18,35 +18,56 @@ function BlogList({ blogs }) {
           {/*mapping each blog  */}
           {blogs.map((blog) => (
             <div class="col" key={blog.id}>
-              {/* linking to each individual blog by id */}
-              <Link to={`/blogs/${blog.id}`}>
-                <div class="card mt-4">
-                  <h4 class="card-title mt-2">{blog.title}</h4>
-                  <h6 class="card-subtitle mb-2 text-decoration-none text-muted ">
-                    {" "}
-                    Author: {blog.author} <br /> Date: {blog.date}
-                  </h6>
-                  <img
-                    src={blog.img}
-                    class="card-img-top"
-                    alt="..."
-                    style={{ width: "auto", height: "20em" }}
-                  />
+              <div class="card mt-4">
+                <h4 class="card-title mt-2">{blog.title}</h4>
+                <h6 class="card-subtitle mb-2 text-decoration-none text-muted ">
+                  {" "}
+                  Author: {blog.author} <br /> Date: {blog.date}
+                </h6>
+                <img
+                  src={blog.img}
+                  class="card-img-top"
+                  alt="..."
+                  style={{ width: "auto", height: "20em" }}
+                />
 
-                  <p>
-                    {!isExpanded
-                      ? blog.body.substring(0, 100) + "..."
-                      : blog.body}
-                  </p>
+                <p>
+                  {!isExpanded
+                    ? blog.body.substring(0, 100) + "..."
+                    : blog.body}
+                </p>
+                {/* linking to each individual blog by id */}
+                <Link className="text-decoration-none" to={`/blogs/${blog.id}`}>
                   <button
                     class="btn mr-2 text-align-center w-25"
                     onClick={toggleExpanded}
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: "none" }}
                   >
                     {isExpanded ? "Show Less" : "Read More"}
                   </button>
+                </Link>
+              </div>
+
+              <div>
+                <div class="row">
+                  <div class="col-6">
+                    <button
+                      class="btn m-lg-1 "
+                      style={{ textDecoration: "none" }}
+                    >
+                      Comments
+                    </button>
+                  </div>
+                  <div class="col-4">
+                    <button
+                      class="btn m-lg-1"
+                      style={{ textDecoration: "none" }}
+                    >
+                      ❤️
+                    </button>
+                  </div>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

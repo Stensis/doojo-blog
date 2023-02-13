@@ -31,7 +31,7 @@ function Home() {
     data: blogs,
     isLoading,
     error
-  } = UseFetch("http://localhost:3001/blogs");
+  } = UseFetch("http://localhost:3000/blogs");
 
   return (
     <>
