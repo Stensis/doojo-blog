@@ -1,28 +1,6 @@
 {
   "blogs": [
     {
-      "title": "ewrdwefwef",
-      "img": "https://images.unsplash.com/photo-1674903745215-0267b9c6baeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
-      "body": "ewrestgp'[;guikyfjtyhtkjngfgdkjheuithe5tkerngdsf,mg,We have now completed our second functionality of our App. Let’s cover the last two together as they have the same working code with a few differences,We have now completed our second functionality of our App. Let’s cover the last two together as they have the same working code with a few differencesm",
-      "author": "ewrwefr",
-      "date": "12/09/14",
-      "likes": 20,
-      "comment": "this one is incredible",
-      "commentor": "cate",
-      "id": 5
-    },
-    {
-      "title": "hello",
-      "body": "hurrasgs",
-      "author": "kim",
-      "img": "https://images.unsplash.com/photo-1674897507017-f6c1527356de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
-      "date": "12/09/22",
-      "likes": 2,
-      "comment": "this one is incredible",
-      "commentor": "cate",
-      "id": 7
-    },
-    {
       "title": "gyuuui",
       "body": "tyutuuituityug",
       "author": "hjhkkj",
@@ -54,20 +32,6 @@
       "comment": "this one is incredible",
       "commentor": "cate",
       "id": 11
-    },
-    {
-      "comment": "hello there",
-      "commentor": "kim",
-      "date": "2023-02-13T12:34:11.675Z",
-      "id": 12
-    },
-    {
-      "title": "herjfrr",
-      "body": "frwfrrefr",
-      "author": "fdsrf",
-      "img": "",
-      "date": "2023-02-13T12:45:19.633Z",
-      "id": 13
     }
   ]
 }

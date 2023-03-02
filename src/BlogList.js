@@ -31,11 +31,11 @@ function BlogList({ blogs }) {
                   style={{ width: "auto", height: "20em" }}
                 />
 
-                <p>
+                {/* <p>
                   {!isExpanded
                     ? blog.body.substring(0, 100) + "..."
                     : blog.body}
-                </p>
+                </p> */}
                 {/* linking to each individual blog by id */}
                 <Link className="text-decoration-none" to={`/blogs/${blog.id}`}>
                   <button
